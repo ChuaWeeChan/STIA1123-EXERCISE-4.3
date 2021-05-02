@@ -1,0 +1,30 @@
+package Testing;
+
+/**
+ *
+ * @author CHUA WEE CHAN 271948
+ */
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+
+        Apple objApple= new Apple("Apple",2,5);
+	System.out.println(objApple);
+        
+        RedApple objRedApple= new RedApple("Red Apple",3,5,30.5);
+	System.out.println(objRedApple);
+		
+	GreenApple objGreenApple= new GreenApple("Green Apple",1,4,20.5,"Green");
+	System.out.println(objGreenApple);
+		
+	Banana objBanana= new Banana("Banana",2,9,12.5,"Yellow");
+	System.out.println(objBanana);
+        
+	Blueberries objBlueberries= new Blueberries("Blueberries",12,5,102,"Purple");
+	System.out.println(objBlueberries);
+    }
+    
+}
