@@ -1,0 +1,83 @@
+package Testing;
+
+/**
+ *
+ * @author CHUA WEE CHAN 271948
+ */
+public class RedApple extends Apple {
+    protected double weight;
+    
+    public RedApple(String n, int p, int q, double w){
+        super(n,p,q);
+        weight=w;
+        
+        setInfo();
+        setInfo(n);
+        setInfo(n,p,q,w);
+        
+    }
+    
+    public void setInfo(){
+        System.out.println("\nRed Apple is a fruit.");
+    }
+    
+    public void setInfo(String n){
+        System.out.println(n+" is good to healthy.");
+    }
+    
+    public void setInfo(String n, int p, int q, double w){
+        System.out.println(n+" is sweet");
+        if (p>=0)
+            p=price;
+        else
+            p=0;
+        
+        if (q>=0)
+            q=quantity;
+        else
+            q=0;
+        
+        if (w>=0)
+            w=weight;
+        else
+            w=0;
+    }
+    
+    public int Price(){
+        return price;
+    }
+    
+    public int Quantity(){
+        return quantity;
+    }
+    
+    public double Weight(){
+        return weight;
+    }
+    
+    public double totalWeight(){ //overloading method with no argument
+        double totalWeight = quantity*weight;
+        return totalWeight;
+    }
+   
+    public double totalWeight(int q){ //overloading method with 1 argument
+        double totalWeight = q*weight;
+        return totalWeight;
+    }
+    
+    public double totalWeight(int q, double w){ //overloading method with 2 argument
+        double totalWeight = q*w;
+        return totalWeight;
+    }
+    
+    public String toString(){ //overriding method
+        return super.toString()
+                +"\nPrice : RM"+price
+                +"\nQuantity : "+quantity+"units"
+                +"\nWeight : "+weight+"gm each."
+                +"\nTotal Weight of your purchase : "+totalWeight()+"gm."
+                +"\nTotal Weight of 5 units : "+totalWeight(5)+"gm."
+                +"\nTotal Weight 7 unit with 35gm each : "+totalWeight(7,35)+"gm.";
+    }
+    
+}
