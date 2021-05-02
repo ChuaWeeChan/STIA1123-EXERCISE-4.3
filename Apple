@@ -1,0 +1,36 @@
+package Testing;
+
+/**
+ *
+ * @author CHUA WEE CHAN 271948
+ */
+public class Apple extends Fruit{ //sub class of fruit
+    protected int price,quantity;
+    
+    public Apple(String n, int p, int q){ //constructor sub class with argument
+        super(n);
+        price = p;
+        quantity = q;
+
+    }
+    
+    public String printInfo(){
+        return "\nApple is a Fruit";
+    }
+    
+    public int totalPrice(){ //overloading method with no argument
+        int totalPrice = quantity*price;
+        return totalPrice;
+    }
+   
+    public int totalPrice(int p){ //overloading method with 1 argument
+        int totalPrice = p*quantity;
+        return totalPrice;
+    }
+    
+    public int totalPrice(int p, int q){ //overloading method with 2 argument
+        int totalPrice = p*q;
+        return totalPrice;
+    }
+    
+}
