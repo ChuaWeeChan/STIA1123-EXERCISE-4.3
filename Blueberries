@@ -1,0 +1,98 @@
+package Testing;
+
+/**
+ *
+ * @author CHUA WEE CHAN 271948
+ */
+public class Blueberries extends Fruit {
+    protected int price,quantity;
+    protected double weight;
+    protected String colour;
+    
+    public Blueberries(String n,int p,int q, double w, String c){ //constructor sub class with argument
+        super(n);
+        price = p;
+        quantity = q;
+        weight = w;
+        colour = c;
+        
+        setInfo();
+        setInfo(n);
+        setInfo(n,p,q,w,c);
+    }
+
+    public void setInfo(){
+        System.out.println("\nBlueberries is a type of fruit.");
+    }
+    
+    public void setInfo(String n){
+        System.out.println(n+" is good to healthy.");
+    }
+    
+    public void setInfo(String n, int p, int q, double w, String c){
+        System.out.println(n+" is sweet");
+        if (p>=0)
+            p=price;
+        else
+            p=0;
+        
+        if (q>=0)
+            q=quantity;
+        else
+            q=0;
+        
+        if (w>=0)
+            w=weight;
+        else
+            w=0;
+        
+        if (c.equals(null))
+            c=null;
+        else
+            c=colour;
+        
+    }
+    
+    public int Price(){
+        return price;
+    }
+    
+    public int Quantity(){
+        return quantity;
+    }
+    
+    public double Weight(){
+        return weight;
+    }
+    
+    public String Colour(){
+        return colour;
+    }
+    
+    public double totalWeight(){ //overloading method with no argument
+        double totalWeight = quantity*weight;
+        return totalWeight;
+    }
+   
+    public double totalWeight(int q){ //overloading method with 1 argument
+        double totalWeight = q*weight;
+        return totalWeight;
+    }
+    
+    public double totalWeight(int q, double w){ //overloading method with 2 argument
+        double totalWeight = q*w;
+        return totalWeight;
+    }
+    
+    public String toString(){ //overriding method
+        return super.toString()
+                +"\nPrice : RM"+price
+                +"\nQuantity : "+quantity+"units"
+                +"\nWeight : "+weight+"gm each."
+                +"\nColour : "+colour
+                +"\nTotal Weight of your purchase : "+totalWeight()+"gm."
+                +"\nTotal Weight of 1 units : "+totalWeight(1)+"gm."
+                +"\nTotal Weight of 2 units with 100gm each : "+totalWeight(2,100)+"gm.";
+    }
+}
+
